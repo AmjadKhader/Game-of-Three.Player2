@@ -1,4 +1,4 @@
-# Game of Three - Player 1
+# Game of Three - Player 2
 
 This project implements a two-player game using Spring Boot applications communicating with Kafka.
 
