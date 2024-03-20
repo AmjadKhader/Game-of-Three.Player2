@@ -5,15 +5,15 @@ import org.springframework.stereotype.Component;
 
 import java.util.logging.Logger;
 
-import static justeattakeaway.player2.Player2Application.game;
+import static justeattakeaway.player2.utils.Constants.game;
 
 @Component
-public class MessageProducer {
+public class GameProducer {
     private final Logger logger = Logger.getLogger(this.getClass().getName());
 
     private final KafkaTemplate<String, Integer> kafkaTemplate;
 
-    public MessageProducer(KafkaTemplate<String, Integer> kafkaTemplate) {
+    public GameProducer(KafkaTemplate<String, Integer> kafkaTemplate) {
         this.kafkaTemplate = kafkaTemplate;
     }
 
