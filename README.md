@@ -36,7 +36,7 @@ Ensure you have docker compose up using the command `docker compose up -d` from 
 #### Additional Notes:
 
 This is a basic implementation focusing on game logic and Kafka communication.
-You can manually choose the starting value of the game by calling `POST /game/play` from Player 1 application
+You can manually choose the starting value of the game by setting environment variable mode=manual
 
 **Technologies Used:**
 
