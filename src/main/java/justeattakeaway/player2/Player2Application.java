@@ -8,19 +8,20 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 
+import java.util.Objects;
+
 @SpringBootApplication
 @EnableConfigurationProperties({KafkaConsumerConfiguration.class, KafkaProducerConfiguration.class})
 public class Player2Application {
 
-
     public static void main(String[] args) {
-        if (args.length == 1 &&
-                (args[0].equalsIgnoreCase("manual")
-                        || args[0].equalsIgnoreCase("automatic"))) {
-
+        String mode = System.getenv("mode");
+        if (Objects.nonNull(mode) &&
+                (mode.equalsIgnoreCase("manual")
+                        || mode.equalsIgnoreCase("automatic"))) {
             SpringApplication.run(Player2Application.class, args);
 
-            if (args[0].equalsIgnoreCase("manual")) {
+            if (mode.equalsIgnoreCase("manual")) {
                 Constants.gameMode = (GameMode.MANUAL);
             } else {
                 Constants.gameMode = (GameMode.AUTOMATIC);
